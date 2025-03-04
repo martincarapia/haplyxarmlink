@@ -24,6 +24,7 @@
 *.lai
 *.la
 *.a
+!deps/macos/HardwareAPI.0.2.8.macos/libHaply.HardwareAPI.a
 *.lib
 
 # Executables
@@ -31,3 +32,4 @@
 *.out
 *.app
 .DS_Store
+build/*
