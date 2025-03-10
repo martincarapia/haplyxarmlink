@@ -27,10 +27,10 @@ set(SOURCES
 )
 
 # Add the executable
-add_executable(HaplyXArmLink ${SOURCES})
+add_executable(main ${SOURCES})
 
 # Link the libraries
-target_link_libraries(HaplyXArmLink
+target_link_libraries(main
     Haply.HardwareAPI
     xarm
     # Add other libraries you may need
@@ -45,10 +45,10 @@ add_custom_target(
 )
 
 # Ensure your project depends on xArm-CPLUS-SDK
-add_dependencies(HaplyXArmLink xarm_sdk)
+add_dependencies(main xarm_sdk)
 
 # Copy libxarm.so to the build/lib directory after building the target
-add_custom_command(TARGET HaplyXArmLink POST_BUILD
+add_custom_command(TARGET main POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy
     ${PROJECT_SOURCE_DIR}/deps/xArm-CPLUS-SDK/build/lib/libxarm.so
     ${CMAKE_BINARY_DIR}/build/lib/libxarm.so
